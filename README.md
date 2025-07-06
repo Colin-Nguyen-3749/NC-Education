@@ -6,6 +6,7 @@ US News and World Report, with all information from the dataset being observed a
 come from at most 7 years ago). Some information was gathered through surveys, but some information (like school spending and funds) was acquired from the government. 
 
 Here are the definitions for the variables:
+  
   School System:   
   - (Qualitative/Nominal)
   - The name of the school system (many of these are just the names of the NC county itself, but not all of them). 
