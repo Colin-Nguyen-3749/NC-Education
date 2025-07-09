@@ -5,6 +5,9 @@ each school district's student population to the amount of funding the district 
 US News and World Report, with all information from the dataset being observed and recorded from 2018-2023 (the years reported may vary from each school district, but they all 
 come from at most 7 years ago). Some information was gathered through surveys, but some information (like school spending and funds) was acquired from the government. 
 
+Data sourced from publicly available information on usnews.com. This project is for educational and non-commercial purposes only.
+
+
 Here are the definitions for the variables:
 
 | Variable Name | Data Type | Definition |
