@@ -69,15 +69,14 @@ ggplot(education2, aes(x = Number.of.Students, )) +
 
 ```
 
-<img width="1056" height="723" alt="Boxplot1" src="https://github.com/user-attachments/assets/ad4eb72d-2d4a-4f47-b7c8-163c59ecad8f" />
+<img width="1056" height="723" alt="Boxplot" src="https://github.com/user-attachments/assets/ad4eb72d-2d4a-4f47-b7c8-163c59ecad8f" />
 
 This boxplot shows the distribution of the amount of students in each of the school districts- it's amazing to see how large some of North Carolina's schools can be, with outliers reaching beyong 135,000 students, rivalling the size of a few universities. In contrast, the smallest school district has only 475 students. The median, which was found through summary() since it's hard to see on the boxplot, is around 5,776, and 50% of school districts have between 2,652 and 12,920 students (see below).
 
 ```{r summary statistics, message=FALSE, warning=FALSE}
 summary(education2$Number.of.Students)
 ```
-
-
+<img width="1191" height="103" alt="Summary" src="https://github.com/user-attachments/assets/f39a0aa7-1114-49d8-9717-312eecd8db91" />
 
 ```{r boxplot2, message=FALSE, warning=FALSE}
 mini_ed1 <- education2[c(5,13,14)]
@@ -94,6 +93,10 @@ ggplot(data_long, aes(y = variable, x = value, fill = variable)) +
   scale_fill_manual(values=c("mediumseagreen","mediumaquamarine","seagreen1")) 
   
 ```
+
+<img width="1033" height="718" alt="Boxplot 2" src="https://github.com/user-attachments/assets/b5204779-bfb9-4b26-9657-ec110debfa3d" />
+
+
 These boxplots show the distributions of the total minority enrollment, total percent of economically disadvantaged students, and the average percent of certified teachers across all of North Carolina's school districts. The total minority enrollment distribution seems pretty balanced as the median is around 50% minority enrollment, with 50% of NC schools have lower minority enrollments and 50% having higher numbers. Half of all school districts fall between having around 30% and 70% minority enrollment. The distribution of economically disadvantaged students has a much lower interquartile range but a similar median around the 50% mark, with half of all schools having between 40% and 65% percentages. The distribution of the percent of certified teachers is much higher than the previous two, with a median around 90%. Half of all schools have between 87% and 95% of their teachers certified, with a minimum of about 75%. Notably, there is also an outlier of a school district that has less than 50% of their teachers certified.
 
 
@@ -146,6 +149,10 @@ ggplot(race_data, aes(x=lbls, y=races, fill=as.factor(races))) +
 
 
 ```
+
+<img width="1014" height="718" alt="Boxplot 3" src="https://github.com/user-attachments/assets/19473c2c-6f68-4c3b-918c-97d008e864b9" />
+
+
 Here is a visual showing the distribution of races among the student populations of North Carolina's school districts; do note how these are representing percentages. It appears that the largest racial group is comprised of white students, with the second-largest being the number of black students, followed by Hispanic students. After those three significantly larger groups comes those who identify as two or more races, then Asian students, then American Indian/Alaska Native students and finally Native Hawaiian/Pacific Islander students. This is not very surprising as it very closely matches the racial distribution of North Carolina as a state on the whole, and growing up in North Carolina's public schools, this visualization harbors no surprises for me. 
 
 
@@ -161,11 +168,18 @@ model <- lm(High.School.Math.Proficiency ~ Total.Revenue + Average.Percent.of.Ce
 plot(model, which=c(1, 2))
 
 ```
+<img width="1110" height="688" alt="RF1" src="https://github.com/user-attachments/assets/beeff546-f0d9-48ed-9538-9c3cb7cca587" />
+
+<img width="1095" height="669" alt="QQ1" src="https://github.com/user-attachments/assets/ed2ebb32-cd0a-430e-92bc-35a3c542082e" />
+
+
 
 ```{r HS Math LR, message=FALSE, warning=FALSE}
 summary(model)
 
 ```
+<img width="1134" height="517" alt="Screenshot 2025-07-18 131424" src="https://github.com/user-attachments/assets/eee190d9-aca7-466c-b099-7b7ae63439fc" />
+
 
 #### High School Reading Proficiency
 
@@ -177,12 +191,16 @@ nrow(test2)
 model2 <- lm(High.School.Reading.Proficiency ~ Total.Revenue + Average.Percent.of.Certified.Teachers + Economically.Disadvantaged + Number.of.Full.Time.Counselors, test2)
 plot(model2, which=c(1, 2))
 ```
+<img width="1088" height="710" alt="RF2" src="https://github.com/user-attachments/assets/1ed3278f-b748-4570-ae75-4d29f8adcc18" />
 
+<img width="1089" height="675" alt="QQ2" src="https://github.com/user-attachments/assets/a02988a3-df39-40ba-becb-7fda1199b843" />
 
 
 ```{r HS Reading LR, message=FALSE, warning=FALSE}
 summary(model2)
 ```
+<img width="887" height="510" alt="Screenshot 2025-07-18 131509" src="https://github.com/user-attachments/assets/ef654fcc-8854-453d-81b1-c7be6962e56b" />
+
 
 #### Middle School Math Proficiency
 
@@ -195,10 +213,17 @@ model3 <- lm(Middle.School.Math.Proficiency ~ Total.Revenue + Average.Percent.of
 plot(model3, which=c(1, 2))
 
 ```
+<img width="1058" height="688" alt="RF3" src="https://github.com/user-attachments/assets/bdd7b7ad-f8ef-434f-9b9f-4ff4e0ec7a54" />
+
+<img width="1097" height="654" alt="QQ3" src="https://github.com/user-attachments/assets/5f6a41e2-47c7-4e44-854c-0924f94d2d71" />
+
 
 ```{r MS Math LR, message=FALSE, warning=FALSE}
 summary(model3)
 ```
+
+<img width="883" height="508" alt="Screenshot 2025-07-18 131808" src="https://github.com/user-attachments/assets/56a6a89c-8081-49a2-9b68-82d05e71f81e" />
+
 
 #### Middle School Reading Proficiency
 
@@ -210,12 +235,17 @@ nrow(test4)
 model4 <- lm(Middle.School.Reading.Proficiency ~ Total.Revenue + Average.Percent.of.Certified.Teachers + Economically.Disadvantaged + Number.of.Full.Time.Counselors, test4)
 plot(model4, which=c(1, 2))
 ```
+<img width="1027" height="688" alt="RF4" src="https://github.com/user-attachments/assets/54ae8d1d-ce11-42c8-9c30-a54c5711a0f8" />
 
+<img width="1039" height="673" alt="QQ4" src="https://github.com/user-attachments/assets/734131de-aebb-4ebc-bd74-26df52e1db3c" />
 
 
 ```{r MS Reading LR, message=FALSE, warning=FALSE}
 summary(model4)
 ```
+<img width="904" height="511" alt="Screenshot 2025-07-18 131854" src="https://github.com/user-attachments/assets/b2a1cd7e-e0cb-4d53-b37b-37cf3d715201" />
+
+
 #### Elementary School Math Proficiency
 
 ```{r Elem Math, message=FALSE, warning=FALSE}
@@ -226,11 +256,17 @@ nrow(test5)
 model5 <- lm(Elementary.School.Math.Proficiency ~ Total.Revenue + Average.Percent.of.Certified.Teachers + Economically.Disadvantaged + Number.of.Full.Time.Counselors, test5)
 plot(model5, which=c(1, 2))
 ```
+<img width="1048" height="663" alt="RF5" src="https://github.com/user-attachments/assets/6232ba89-0568-49df-840e-abe2a91f2541" />
+
+<img width="1071" height="654" alt="QQ5" src="https://github.com/user-attachments/assets/39cfa040-7324-4749-ade4-03878b820205" />
 
 
 ```{r Elem Math LR, message=FALSE, warning=FALSE}
 summary(model5)
 ```
+<img width="892" height="507" alt="Screenshot 2025-07-18 131945" src="https://github.com/user-attachments/assets/4278c06a-0fb9-4cc1-be04-d60d1458fcb6" />
+
+
 #### Elementary School Reading Proficiency
 
 ```{r Elem Reading, message=FALSE, warning=FALSE}
@@ -241,10 +277,15 @@ nrow(test6)
 model6 <- lm(Elementary.School.Reading.Proficiency ~ Total.Revenue + Average.Percent.of.Certified.Teachers + Economically.Disadvantaged + Number.of.Full.Time.Counselors, test6)
 plot(model6, which=c(1, 2))
 ```
+<img width="1047" height="665" alt="RF6" src="https://github.com/user-attachments/assets/0063b86f-edda-4012-85e8-945fa6663d2f" />
+
+<img width="1025" height="660" alt="QQ6" src="https://github.com/user-attachments/assets/ca41c4fd-0ef8-44ac-864a-c711f2dd29e1" />
+
 
 ```{r Elem Reading LR, message=FALSE, warning=FALSE}
 summary(model6)
 ```
+<img width="903" height="512" alt="Screenshot 2025-07-18 132029" src="https://github.com/user-attachments/assets/5d2083f8-2017-41a6-9200-077c0cc94d69" />
 
 For each of the linear regression models above, I checked if the variables that I picked for analysis (total revenue of the school district, the average percent of certified teachers, the amount of economically disadvantaged students, and the number of full-time counselors) were fit to use for multiple linear regression. To do this, I used the Q-Q plot to check if the data was normally distributed- the points on the graph lined up pretty well with the diagonal line overall, and so this condition is satisfied. I also used a residuals vs. fitted plot to make sure that the relationship was linear and all the data is random and independent. None of these residual plots show any signs of major homoskedasticity, and while there were a few outliers, the red line was mostly close to being flat for most of the data, so these conditions are almost met. 
 
