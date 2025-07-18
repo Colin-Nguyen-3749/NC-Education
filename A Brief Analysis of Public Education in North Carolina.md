@@ -69,7 +69,7 @@ ggplot(education2, aes(x = Number.of.Students, )) +
 
 ```
 
-![Boxplot displaying distribution of the amount of students enrolled across all of the school districts](screenshots/Screenshot 2025-07-18 122500.png)
+<img width="1056" height="723" alt="Boxplot1" src="https://github.com/user-attachments/assets/ad4eb72d-2d4a-4f47-b7c8-163c59ecad8f" />
 
 This boxplot shows the distribution of the amount of students in each of the school districts- it's amazing to see how large some of North Carolina's schools can be, with outliers reaching beyong 135,000 students, rivalling the size of a few universities. In contrast, the smallest school district has only 475 students. The median, which was found through summary() since it's hard to see on the boxplot, is around 5,776, and 50% of school districts have between 2,652 and 12,920 students (see below).
 
