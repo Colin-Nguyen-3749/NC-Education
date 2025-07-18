@@ -1,18 +1,7 @@
 
 ---
-title: "A Brief Analysis of Public Education in North Carolina"
-author: "Colin Nguyen"
-date: "2025-07-09"
-output:
-  html_document:
-    df_print: paged
-    code_folding: show
-    toc: true
-    toc_depth: 4
-    toc_float:
-      collapsed: false
-      smooth_scroll: false
----
+# A Brief Analysis of Public Education in North Carolina
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
