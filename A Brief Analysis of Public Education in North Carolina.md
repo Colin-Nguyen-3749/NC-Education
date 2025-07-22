@@ -38,36 +38,12 @@ Potential stakeholders in this research include the students and families of the
 
 Let it be known that no students are identified and that all student data is completely anonymous and not on an individual level. 
 
-# Methods
+# Analysis
 
-###   1. Preliminary analysis
+###   1. Preliminary Analysis
 
 First, I will use the package ggplot2 to create graphical visualizations and simple descriptive methods to provide general insights into the
 data of the schools across the 115 districts. Some visualizations that will appear in this research paper include a boxplot and a density plot.  Each visualization will be accompanied by a description that includes the title, the independent and/or dependent variables, and the interpretation of the graph. Here, I will be looking at the following questions: what districts have the most students? How much of North Carolina's students are considered economically disadvantaged, and how does that differ from district to district? What district has to highest minority enrollment? What district has the most resources, like revenue, teachers, and counselors?
-
-###   2. Full-scale analysis
-
-Does there exist a linear relationship between a school district's total revenue and its test scores? What about a linear relationship between the total number of economically disadvantages students and test scores? First, I will check if the conditions for linear regression analysis are met, like the normality of the data, the independence of the variables, and constant variance. To answer my questions, I will be using total revenue and the total percent amount of economically disadvantaged students as my dependent variable- since these are both numerical, they satisfy one of the key requirements for conducting linear regression analysis. The reason why I want to use linear regression is to see if there exists any relationship between these variables, and if so, the strength of this relationship; I want to know if these variables can be used to predict a school's districts test scores. Multiple linear regression would allow me to assess the combined influence of all predictor variables simultaneously, while also controlling for the effects of other variables. This ensures that the relationship between each predictor and the dependent variable is evaluated more accurately, without the confounding influence of the other predictors. 
-
-###   3. Actual Analysis
-
-
-```{r boxplots, message=FALSE, warning=FALSE}
-ggplot(education2, aes(x = Number.of.Students, )) +
-  geom_boxplot() +
-    labs(
-      title = "Boxplot of Distribution of Student Enrollment \nAcross NC School Districts",
-      x = "Number of Students"
-    )+
-    theme_minimal()+
-    theme(
-      axis.text.y = element_blank(),  # Removes the y-axis tick labels
-      plot.title = element_text(hjust = 0.5, face = 'bold')
-    ) +
-  scale_x_continuous(breaks = seq(0, 160000, by = 15000)) 
-
-
-```
 
 <img width="1056" height="723" alt="Boxplot" src="https://github.com/user-attachments/assets/ad4eb72d-2d4a-4f47-b7c8-163c59ecad8f" />
 
@@ -156,7 +132,11 @@ ggplot(race_data, aes(x=lbls, y=races, fill=as.factor(races))) +
 Here is a visual showing the distribution of races among the student populations of North Carolina's school districts; do note how these are representing percentages. It appears that the largest racial group is comprised of white students, with the second-largest being the number of black students, followed by Hispanic students. After those three significantly larger groups comes those who identify as two or more races, then Asian students, then American Indian/Alaska Native students and finally Native Hawaiian/Pacific Islander students. This is not very surprising as it very closely matches the racial distribution of North Carolina as a state on the whole, and growing up in North Carolina's public schools, this visualization harbors no surprises for me. 
 
 
-### 4. Linear Regression Models
+### 2. Initial Look
+
+Does there exist a linear relationship between a school district's total revenue and its test scores? What about a linear relationship between the total number of economically disadvantages students and test scores? First, I will check if the conditions for linear regression analysis are met, like the normality of the data, the independence of the variables, and constant variance. To answer my questions, I will be using total revenue and the total percent amount of economically disadvantaged students as my dependent variable- since these are both numerical, they satisfy one of the key requirements for conducting linear regression analysis. The reason why I want to use linear regression is to see if there exists any relationship between these variables, and if so, the strength of this relationship; I want to know if these variables can be used to predict a school's districts test scores. Multiple linear regression would allow me to assess the combined influence of all predictor variables simultaneously, while also controlling for the effects of other variables. This ensures that the relationship between each predictor and the dependent variable is evaluated more accurately, without the confounding influence of the other predictors. 
+
+For the following linear regression models, I will be using total revenue, the average percent of certified teachers, the number of full-time counselors, and the amount of economically-disadvantaged students in each school district. The reason why I will be looking into these variables first is because I predict that this variables will have a statistically significant effect on the proficiency scores of each school district. I expect that schools with more revenue to have higher scores because they have the means to provide higher-quality education, like newer textbooks, online learning programs, and study materials. Even though they may have higher expenses to cover, I'm still making an initial predication that their scores will be higher. I predict that more certified teachers will lead to higher scores, as I think that a certified teacher will be better than an uncertified teacher because they have gone through more training and may offer better help to students. I'm predicting that the more full-time counselors there are, the higher scores will be because I think more counselors can help students navigate school better, like with studying and organization. However, this is just a guess as many students don't often go to the counselor for these things, but I'm thinking that it'll have some degree of a positive effect. I also predict that the number of economically disadvantaged students is inversely related to a school district's proficiency scores with similar logic to my reasoning for my prediction for total revenue: more money means more access to better resources, and less money can be a cause to many limitations. Let's see if my predications have any accuracy to them. 
 
 #### High School Math Proficiency
 ```{r HS math, message=FALSE, warning=FALSE}
@@ -294,8 +274,8 @@ In these multiple-linear regression models, I am looking to see if the school di
 All models here have at least one variable that has a p-value of less than 0.05 (the alpha level I will be using), which means that all models are statistically significant. What came as a surprise to me is that in all of the models, a one-unit increase in variables such as total revenue and the total number of economically disadvantaged students led to a decrease in predicted proficiency scores- I had expected that if a district has more total revenue, then they have more financial resources to provide their students with a higher-quality education which would lead to higher scores. However, this made me realize that total revenue only tells me how much money a school district receives and not how they allocate it- this will be analyzed later. Something that I expected to happen was that an increase in the amount of certified teachers and full-time counselors would be predicted to lead to an increase in proficiency scores. 
 
 
-# Conclusion 
-In this paper I looked to see if there were any patterns that arose between the conditions of a school district and how they performed. First of all, I looked at some basic summary statistics of North Carolina's 115 school districts for a snapshot of what I'm going to be looking at. North Carolina's schools have a median of around fifty percent for both total minority enrollment and the percent of economically disadvantaged students. Most teachers are certified, but there is an outlier that's far below the usual amount of all the other districts. The largest student racial group consists of white students, followed by black student, followed by Hispanic students. Then other groups like Asian, Native American, Pacific Islander, and those who identify as two or more races are far below in numbers. 
+# Conclusion of Initial Look
+In this section, I looked to see if there were any patterns that arose between the conditions of a school district and how they performed. First of all, I looked at some basic summary statistics of North Carolina's 115 school districts for a snapshot of what I'm going to be looking at. North Carolina's schools have a median of around fifty percent for both total minority enrollment and the percent of economically disadvantaged students. Most teachers are certified, but there is an outlier that's far below the usual amount of all the other districts. The largest student racial group consists of white students, followed by black student, followed by Hispanic students. Then other groups like Asian, Native American, Pacific Islander, and those who identify as two or more races are far below in numbers. 
 
 In comparing the school district's total revenue, the amount of certified teachers and full-time counselors, and the percent of economically disadvantaged students, a pattern does seem to arise- indeed, these factors may indicate that there could be a relationship. The staff seems to have a positive effect on a district's proficiency scores across elementary, middle, and high schools. However, financial variables like the total revenue of a school and the amount of economically disadvantaged students seem to have a negative effect on proficiency scores as they rise across all grade levels. How could this be?
 
