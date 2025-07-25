@@ -393,7 +393,8 @@ It may be difficult to find a perfect solution (or even the best) and it may be 
 
 
 Note: Here are some more visualizations for further thought. 
-<img width="1250" height="605" alt="Screenshot 2025-07-22 010825" src="https://github.com/user-attachments/assets/1bbc5d04-5a3e-46ec-9db1-b99a3f972b72" />
+
+<img width="1323" height="786" alt="Screenshot 2025-07-22 010832" src="https://github.com/user-attachments/assets/6fa0c68d-9f1f-4a43-b82d-b51ec9c9001e" />
 
 <img width="1326" height="743" alt="Screenshot 2025-07-22 100335" src="https://github.com/user-attachments/assets/67c0d05c-0454-4570-a3f4-fa74261d2ca9" />
 
