@@ -394,8 +394,9 @@ It may be difficult to find a perfect solution (or even the best) and it may be 
 
 Note: Here are some more visualizations for further thought. 
 <img width="1250" height="605" alt="Screenshot 2025-07-22 010825" src="https://github.com/user-attachments/assets/1bbc5d04-5a3e-46ec-9db1-b99a3f972b72" />
+
 <img width="1326" height="743" alt="Screenshot 2025-07-22 100335" src="https://github.com/user-attachments/assets/67c0d05c-0454-4570-a3f4-fa74261d2ca9" />
-<img width="616" height="329" alt="Screenshot 2025-07-22 100847" src="https://github.com/user-attachments/assets/5dd20590-e217-465b-9140-cc947ad36b78" />
+
 <img width="1334" height="789" alt="Screenshot 2025-07-22 100900" src="https://github.com/user-attachments/assets/2fd97ffd-22d0-48e5-b9ec-6d9c28f545b2" />
 
 
