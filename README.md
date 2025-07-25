@@ -7,6 +7,8 @@ come from at most 7 years ago). Some information was gathered through surveys, b
 
 Data sourced from publicly available information on usnews.com. This project is for educational and non-commercial purposes only.
 
+NOTE: This repo contains an EXAMPLE dataset of only a few school districts- it demonstrates all variables and what they will look like, but all of the values here are randomly generated and not accurate (the percentages for the racial groups should add up to 100, but here they do not).
+While I did use an accurate dataset composed of data from US New and Reports for my analysis paper, I am not able to post it on Github. This is just to give you an idea of what it looks like. 
 
 Here are the definitions for the variables:
 
