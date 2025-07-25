@@ -293,6 +293,46 @@ North Carolina is lucky to be home to three distinct and unique regions- the  to
 
 To do this, I will be checking the conditions of normality using the Shapiro-Wilkes Test to ensure that I can use the data for my next step- two-sample t-tests. For each of the three regions, I will only be analyzing math and reading proficiency scores at the high school level for time's sake. I will be conducting the two-sample t-test six times- for math and reading scores, I will compare the mountain region to the piedmont region, the piedmont region to the coastal region, and finally the coastal region to the mountain region. For each of the six tests, our null hypothesis will be that there is no significant difference between the two compared regions' scores, and the alternate hypothesis will be that there does exist a statistically significant difference.
 
+```{r Shapiro Wilk Tests, message=FALSE, warning=FALSE}
+mountain <- education3 %>% filter(Region=="Mountain")
+
+mountain <- mountain %>% 
+  mutate_if(is.character, as.numeric)
+
+mountain_HSmath <- shapiro.test(mountain$High.School.Math.Proficiency)
+print(mountain_HSmath)
+
+mountain_HSreading <- shapiro.test(mountain$High.School.Reading.Proficiency)
+print(mountain_HSreading)
+
+#################################################################
+
+piedmont <- education3 %>% filter(Region=="Piedmont")
+
+piedmont <- piedmont %>% 
+  mutate_if(is.character, as.numeric)
+
+piedmont_HSmath <- shapiro.test(piedmont$High.School.Math.Proficiency)
+print(piedmont_HSmath)
+
+piedmont_HSreading <- shapiro.test(piedmont$High.School.Reading.Proficiency)
+print(piedmont_HSreading)
+
+#################################################################
+
+coastal <- education3 %>% filter(Region=="Coastal")
+
+coastal <- coastal %>% 
+  mutate_if(is.character, as.numeric)
+
+coastal_HSmath <- shapiro.test(coastal$High.School.Math.Proficiency)
+print(coastal_HSmath)
+
+coastal_HSreading <- shapiro.test(coastal$High.School.Reading.Proficiency)
+print(coastal_HSreading)
+
+```
+
 <img width="573" height="234" alt="Screenshot 2025-07-24 215336" src="https://github.com/user-attachments/assets/89d9ec06-2258-4529-a4b0-74565dfacad9" />
 
 <img width="549" height="247" alt="Screenshot 2025-07-24 215403" src="https://github.com/user-attachments/assets/cd0cc25e-9962-4930-9c57-2d61a7f8f43e" />
