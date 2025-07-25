@@ -341,5 +341,45 @@ print(coastal_HSreading)
 
 To ensure the validity of the two sample t-test, the distributions of math and reading proficiency grades must be approximately normal for all three regions. I assessed the normality assumption using the Shapiro-Wilk test. Since all p-values are greater than 0.05, we cannot reject the null hypothesis that the data does come from a normally distributed source. All w-statistics are also high, offering more reassurance that our data follows a normal distribution. This all assures that we can use all regions' data for our two-sample t-tests. 
 
+```{r Two Sample T-Tests}
+MP_HS_math <- t.test(mountain$High.School.Math.Proficiency, piedmont$High.School.Math.Proficiency)
+print(MP_HS_math)
+
+MP_HS_reading <- t.test(mountain$High.School.Reading.Proficiency, piedmont$High.School.Reading.Proficiency)
+print(MP_HS_reading)
+
+###############################
+
+PC_HS_math <- t.test(piedmont$High.School.Math.Proficiency, coastal$High.School.Math.Proficiency)
+print(PC_HS_math)
+
+PC_HS_reading <- t.test(piedmont$High.School.Reading.Proficiency, coastal$High.School.Reading.Proficiency)
+print(PC_HS_reading)
+
+###############################
+
+CM_HS_math <- t.test(coastal$High.School.Math.Proficiency, mountain$High.School.Math.Proficiency)
+print(CM_HS_math)
+
+CM_HS_reading <- t.test(coastal$High.School.Reading.Proficiency, mountain$High.School.Reading.Proficiency)
+print(CM_HS_reading)
+
+```
+<img width="1030" height="491" alt="Screenshot 2025-07-24 215707" src="https://github.com/user-attachments/assets/244494b7-fef9-4c86-85b3-d986dde4597b" />
+
+For our first set of t-tests, I analyzed the differences in math and reading proficiency scores between the mountain and piedmont regions. As stated in the 'Second Look' abstract section, our null hypothesis states that their is no significant difference between the two. For math, the t-statistic is 5.0929, while for reading the t-statistic is 3.7482; for both, a noticeable difference has been evaluated. Since both numbers are positive, this means that the mean of the proficiency scores of the mountains are higher than that of the piedmont. With both having a p-value of far less than our alpha-level of 0.05 (3.242e-6, 0.0003837), we can reject our null hypothesis. Furthermore, we find evidence to support that our alternate hypothesis (stating that there is a singnificant difference) is true. 
+
+<img width="1012" height="493" alt="Screenshot 2025-07-24 215748" src="https://github.com/user-attachments/assets/d97d69b6-e578-46cb-b1ab-41a3d537c6dc" />
+
+For the second set of t-tests, I compared the piedmont and coastal regions. The math proficiency t-statistic is -1.0475, while the reading proficiency t-statistic is 1.5228. The difference noted here is a bit smaller than our previous set of t-tests, but is still notable nonetheless. However, it appears that the p-values of 0.298 and 0.1317 are much larger than our alpha level of 0.05, meaning that we fail to reject our null hypothesis and that we fail to find evidence to support that our alternate hypothesis is true. Basically, we cannot find any statistically significant difference between the piedmont's proficiency scores and the coastal region's scores, so we have to stick with the idea that they are pretty much similar.
+
+<img width="1026" height="501" alt="Screenshot 2025-07-24 215856" src="https://github.com/user-attachments/assets/9284b39a-d158-4710-97d1-1d644e788a97" />
+
+For the last set of t-tests, I compared the coastal and mountain regions' scores. The math proficiency t-statistic is -4.0768, and the reading proficiency t-statistic is -5.5924. Once again, a notable difference in mean scores have been noted, and the mountain region has the higher score (the negative t-statistic indicates that the second mean is higher). With p-values that are way less than the alpha level of 0.05, we reject our null hypothesis and find evidence to support our alternate hypothesis. 
+
+My predictions seem to be far from the truth, according to the tests that I have conducted. The mountain region, much to my surprise, has the highest proficiency scores of the state, all with statistically significant differences when compared to the piedmont and the coastal region. In fact, nothing seems to support my previous theory, that because the mountain region is probably poorer than the rest of the state that their scores would be the lowest. It's important for me to realize that my prediction was wrong, but it's also important to know why- to do so, I will analyze a map of North Carolina with every county displaying the number of economically disadvantaged students in the district. 
+
+
+
 
 
